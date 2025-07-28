@@ -2,8 +2,8 @@ import os
 import sys
 from final_outline import extract_outline, save_outline
 
-INPUT_DIR = "inputs"
-OUTPUT_DIR = "outputs"
+INPUT_DIR = "input"
+OUTPUT_DIR = "output"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
