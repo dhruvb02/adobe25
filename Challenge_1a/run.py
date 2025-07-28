@@ -1,6 +1,6 @@
 import os
 import sys
-from final_outline import extract_outline, save_outline
+from process import extract_outline, save_outline
 
 INPUT_DIR = "input"
 OUTPUT_DIR = "output"
