@@ -28,6 +28,61 @@ Each PDF generates a JSON file in `outputs/` containing:
 * **outline:** Array with `level` (H1-H3), `text`, and `page` fields
 * **clean structure:** Deduplicated and properly formatted outline
 
+## ⚙️ **How to Run**
+
+---
+
+### 🔹 **1️⃣ Run locally (Python)**
+
+**Install dependencies:**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Run for a single PDF:**
+
+```bash
+python final_outline.py input/yourfile.pdf
+```
+
+**OR run for all PDFs in `input/`:**
+
+```bash
+python run.py
+```
+
+---
+
+### 🔹 **2️⃣ Build Docker Image**
+
+```bash
+docker build -t pdf-outline-extractor .
+```
+
+---
+
+### 🔹 **3️⃣ Run with Docker**
+
+> ⚠️ **Important:**
+> If you are on **Windows**, use the **full absolute path** for `-v` mounts!
+> Example:
+
+```bash
+docker run --rm ^
+  -v "C:/Users/YourUser/Desktop/pdf_outline_extractor/inputs:/app/input" ^
+  -v "C:/Users/YourUser/Desktop/pdf_outline_extractor/outputs:/app/output" ^
+  pdf-outline-extractor
+```
+
+**Linux/Mac example:**
+
+```bash
+docker run --rm \
+  -v "$PWD/inputs:/app/input" \
+  -v "$PWD/outputs:/app/output" \
+  pdf-outline-extractor
+```
 ---
 
 ## Challenge 1B – Persona-Based Section Extractor
