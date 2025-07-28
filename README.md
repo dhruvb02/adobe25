@@ -15,8 +15,6 @@ This repository provides a two-part Python solution for **extracting structured 
 
 **Objective:** Build a robust outline generator that detects and classifies headings (H1–H3) even in noisy or multilingual PDFs.
 
-### How It Works
-
 ## How It Works
 * **PDF Analysis:** Extracts built-in table of contents or creates one by analyzing text formatting
 * **Title Detection:** Identifies document title from largest font text on first page
@@ -119,4 +117,6 @@ python process.py
 
 ## Summary
 
-This two-part toolkit enables end-to-end PDF intelligence: first by uncovering document structure, then by surfacing the content most relevant to your specific analytical persona.
+This repository presents a comprehensive two-stage solution that connects **document organization (Challenge 1A)** with **content intelligence (Challenge 1B)**. 
+
+The system is engineered to **perform consistently and effectively with diverse document types**, encompassing multilingual content and varying structural formats. Through intelligent scoring algorithms, standalone functionality, and flexible architecture, this toolkit provides a powerful foundation for advanced document analysis—suitable for commercial, research, and organizational use cases.
