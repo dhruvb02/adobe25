@@ -23,7 +23,6 @@ def extract_outline(pdf_path):
         text = item[1].strip()
         page = item[2]
 
-        # ✅ Final filter: remove any entry that matches title
         if text.lower() == heading.lower():
             continue
 
@@ -63,7 +62,6 @@ def guess_title(doc):
 
     title = " ".join(top_spans).strip()
 
-    # 🗑️ If the title is only dashes or equals, discard
     if re.fullmatch(r"[-=]{3,}", title):
         return ""
 
@@ -98,7 +96,7 @@ def fake_outline(doc, heading):
             if not line_text:
                 continue
 
-            # ✅ Final skip: if exactly same as title, skip
+           
             if line_text.lower() == heading.lower():
                 continue
 
@@ -152,7 +150,7 @@ def save_outline(pdf_path, result):
     output_path = os.path.join(output_dir, output_file)
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
-    print(f"✅ JSON saved to: {output_path}")
+    print(f"JSON saved to: {output_path}")
     return output_path
 
 if __name__ == "__main__":
@@ -162,7 +160,7 @@ if __name__ == "__main__":
 
     pdf_file = sys.argv[1]
     if not os.path.exists(pdf_file):
-        print(f"❌ File not found: {pdf_file}")
+        print(f"File not found: {pdf_file}")
         sys.exit(1)
 
     result = extract_outline(pdf_file)
