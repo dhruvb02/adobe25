@@ -144,27 +144,7 @@ root/
 └── README.md                  # This file
 ```
 
----
 
-## 🚀 Getting Started
-
-### Challenge 1A
-
-```bash
-cd challenge1a
-python process.py path/to/document.pdf
-```
-
-* **Outputs**: `<basename>_outline.json` in `challenge1a/output/`
-
-### Challenge 1B
-
-```bash
-cd challenge1b
-python process.py
-```
-
-* **Outputs**: `result.json` in `challenge1b/output/`
 
 > On Windows PowerShell, replace paths with `$(Get-Location)` if needed.
 
