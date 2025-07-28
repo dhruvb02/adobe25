@@ -13,8 +13,8 @@ pdf_outline_extractor/
 ├── final_outline.py
 ├── run.py
 ├── requirements.txt
-├── inputs/         # Put your PDF files here
-├── outputs/        # JSON files will be saved here
+├── input/         # Put your PDF files here
+├── output/        # JSON files will be saved here
 └── README.md
 ```
 
@@ -35,10 +35,10 @@ pip install -r requirements.txt
 **Run for a single PDF:**
 
 ```bash
-python final_outline.py inputs/yourfile.pdf
+python final_outline.py input/yourfile.pdf
 ```
 
-**OR run for all PDFs in `inputs/`:**
+**OR run for all PDFs in `input/`:**
 
 ```bash
 python run.py
@@ -62,8 +62,8 @@ docker build -t pdf-outline-extractor .
 
 ```bash
 docker run --rm ^
-  -v "C:/Users/YourUser/Desktop/pdf_outline_extractor/inputs:/app/inputs" ^
-  -v "C:/Users/YourUser/Desktop/pdf_outline_extractor/outputs:/app/outputs" ^
+  -v "C:/Users/YourUser/Desktop/pdf_outline_extractor/inputs:/app/input" ^
+  -v "C:/Users/YourUser/Desktop/pdf_outline_extractor/outputs:/app/output" ^
   pdf-outline-extractor
 ```
 
@@ -71,8 +71,8 @@ docker run --rm ^
 
 ```bash
 docker run --rm \
-  -v "$PWD/inputs:/app/inputs" \
-  -v "$PWD/outputs:/app/outputs" \
+  -v "$PWD/inputs:/app/input" \
+  -v "$PWD/outputs:/app/output" \
   pdf-outline-extractor
 ```
 
@@ -80,7 +80,7 @@ docker run --rm \
 
 ## 🗂️ **Inputs & Outputs**
 
-* **Input PDFs:** Place in `inputs/` folder.
-* **Outputs:** JSON files saved in `outputs/` folder.
+* **Input PDFs:** Place in `input/` folder.
+* **Outputs:** JSON files saved in `output/` folder.
 
 ---
