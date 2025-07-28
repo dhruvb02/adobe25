@@ -447,12 +447,12 @@ def main():
     """Optimized main function for maximum accuracy in minimum time"""
     start_time = time.time()
     
-    print(f"🚀 OPTIMAL PROCESSING: {persona}")
-    print(f"🎯 Task: {job}")
+    print(f"OPTIMAL PROCESSING: {persona}")
+    print(f" Task: {job}")
     
     # Extract keywords
     keywords = smart_keyword_extraction(persona, job, documents)
-    print(f"🔑 {len(keywords)} keywords extracted")
+    print(f" {len(keywords)} keywords extracted")
     
     # Process all PDFs
     all_sections = []
@@ -472,7 +472,7 @@ def main():
     ranked = rank_sections_optimally(all_sections, persona_job_text, keywords)
     
     if not ranked:
-        print("❌ No relevant sections found")
+        print(" No relevant sections found")
         return
     
     print(f"🏆 Top {len(ranked)} relevant sections ranked")
@@ -516,11 +516,11 @@ def main():
     
     elapsed = time.time() - start_time
     
-    print(f"\n✅ PROCESSING COMPLETE in {elapsed:.2f}s")
-    print(f"📁 Output: {os.path.join(OUTPUT_DIR, OUTPUT_FILE)}")
+    print(f"\n PROCESSING COMPLETE in {elapsed:.2f}s")
+    print(f" Output: {os.path.join(OUTPUT_DIR, OUTPUT_FILE)}")
     
     # Validation
-    print(f"\n🎯 RESULTS VALIDATION:")
+    print(f"\n RESULTS VALIDATION:")
     total_relevance = 0
     
     for i, section in enumerate(extracted_sections, 1):
@@ -536,10 +536,10 @@ def main():
         total_relevance += title_overlap + content_overlap
         
         print(f"  {i}. '{section['section_title']}'")
-        print(f"     📄 {section['document']} (page {section['page_number']})")
-        print(f"     📝 {len(subsec['refined_text'])} chars")
-        print(f"     🎯 Query overlap: T:{title_overlap} C:{content_overlap}")
-        print(f"     💬 {subsec['refined_text'][:90]}...")
+        print(f"     {section['document']} (page {section['page_number']})")
+        print(f"     {len(subsec['refined_text'])} chars")
+        print(f"     Query overlap: T:{title_overlap} C:{content_overlap}")
+        print(f"      {subsec['refined_text'][:90]}...")
         print()
     
     # Score estimation
@@ -548,17 +548,6 @@ def main():
     subsection_score = min(40, 25 + avg_relevance * 7)
     total_score = section_score + subsection_score
     
-    print(f"📊 SCORE ESTIMATION:")
-    print(f"   📋 Section Relevance: {section_score:.1f}/60")
-    print(f"   📝 Sub-Section Relevance: {subsection_score:.1f}/40")
-    print(f"   🏆 TOTAL: {total_score:.1f}/100")
-    
-    if total_score >= 90:
-        print("🎯 EXCELLENT - Maximum score achieved!")
-    elif total_score >= 80:
-        print("✅ VERY GOOD - Above target!")
-    else:
-        print("⚠️  GOOD - Room for improvement")
-
+   
 if __name__ == "__main__":
     main()
